@@ -12,9 +12,6 @@ class CategorySerializer(serializers.ModelSerializer):
         children = instance.children.all()
 
         if children:
-            repr['children'] = CategorySerializer(
-                children,
-                many=True
-            ).data
+            repr['children'] = CategorySerializer(children, many=True).data
 
         return repr

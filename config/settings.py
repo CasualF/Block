@@ -43,11 +43,18 @@ INSTALLED_APPS = [
     'block',
     'account',
     'category',
+    'post',
 
     # LIBRARIES
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
+    'django.contrib.sites',
+    # 'allauth',
+    # 'allauth.account',
+    # 'dj_rest_auth_registration',
+    # 'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +149,5 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication'
     ]
 }
+
+
