@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Post, PostImages
 from category.models import Category
-
+from like.serializers import LikeSerializer
 
 class PostImagesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -46,3 +46,9 @@ class PostDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = '__all__'
+
+    def to_representation(self, instance):
+        data = super(PostDetailSerializer, self).to_representation(instance)
+        data['likes'] = LikeSerializer(instance.likes.all(), many=True, required=False).data
+        data['like_count'] = len(data['likes'])
+        return data

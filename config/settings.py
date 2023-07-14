@@ -44,12 +44,14 @@ INSTALLED_APPS = [
     'account',
     'category',
     'post',
+    'like',
 
     # LIBRARIES
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
     'django.contrib.sites',
+    'drf_yasg',
     # 'allauth',
     # 'allauth.account',
     # 'dj_rest_auth_registration',
@@ -61,7 +63,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    # "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
